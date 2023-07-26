@@ -34,4 +34,4 @@ intf = gr.Interface(fn=predict,
                     outputs=gr.outputs.Label(num_top_classes=3),
                     examples=examples)
 
-intf.launch(inline=False)
+intf.launch(inline=True)

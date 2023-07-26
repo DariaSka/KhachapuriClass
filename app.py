@@ -27,7 +27,7 @@ def predict(img):
 
 image = gr.inputs.Image(shape=(192, 192))
 label = gr.outputs.Label()
-examples = ['achma.jpg', 'ajaruli.jpg', 'guruli.jpg', 'penovani.jpg']
+examples = ['achma.jpg', 'guruli.jpg', 'penovani.jpg', 'ajaruli.jpg']
 
 more_examples = ["https://www.196flavors.com/wp-content/uploads/2014/10/achma-3-FP.jpg"]
 
@@ -35,7 +35,7 @@ more_examples = ["https://www.196flavors.com/wp-content/uploads/2014/10/achma-3-
 # write function that rotates images
 def rotate(img):
     img = PILImage.create(img)
-    img.rotate(45)
+    img.rotate(11)
     return img
 
 

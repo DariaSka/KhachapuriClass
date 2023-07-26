@@ -1,6 +1,7 @@
 from fastai.vision.all import *
 import gradio as gr
 from PIL import Image as PILImage
+import numpy as np
 
 learn = load_learner('khachapuri_classifier.pkl')
 
@@ -10,8 +11,8 @@ categories = learn.dls.vocab
 
 
 def dosomething(img):
-    print(2)
-    
+    print(1)
+
 def donothing(img):
     return (img, img)
 
@@ -24,8 +25,12 @@ def predict(img):
     _, _, probs = learn.predict(img)
     return dict(zip(categories, map(float, probs)))
 
+def dosequence():
+    return np.arange(10)
 
-image = gr.inputs.Image(shape=(192, 192))
+
+
+image = gr.inputs.Image(shape=(256, 256))
 label = gr.outputs.Label()
 examples = ['achma.jpg', 'guruli.jpg', 'penovani.jpg', 'ajaruli.jpg']
 
@@ -45,4 +50,4 @@ intf = gr.Interface(fn=predict,
                     outputs=gr.outputs.Label(num_top_classes=3),
                     examples=examples)
 
-intf.launch(inline=False)
+intf.launch(inline=True)

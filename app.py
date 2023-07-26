@@ -1,6 +1,6 @@
 from fastai.vision.all import *
 import gradio as gr
-
+import numpy as np
 
 learn = load_learner('khachapuri_classifier.pkl')
 
@@ -14,13 +14,17 @@ def predict(img):
 
 def dosomething(img):
     print(1)
-    
+
 def donothing(img):
     return img
 
 
+def dosequence():
+    return np.arange(10)
 
-image = gr.inputs.Image(shape=(192, 192))
+
+
+image = gr.inputs.Image(shape=(256, 256))
 label = gr.outputs.Label()
 examples = ['achma.jpg', 'ajaruli.jpg', 'guruli.jpg', 'penovani.jpg']
 

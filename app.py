@@ -12,10 +12,12 @@ def predict(img):
     _, _, probs = learn.predict(img)
     return dict(zip(categories, map(float, probs)))
 
-def donothing(img):
-    return img
 def dosomething(img):
     print(1)
+    
+def donothing(img):
+    return img
+
 
 
 image = gr.inputs.Image(shape=(192, 192))

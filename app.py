@@ -12,6 +12,9 @@ def predict(img):
     pred, pred_idx, probs = learn.predict(img)
     return dict(zip(categories, map(float, probs)))
 
+def dosomething(img):
+    print(1)
+
 
 image = gr.inputs.Image(shape=(192, 192))
 label = gr.outputs.Label()

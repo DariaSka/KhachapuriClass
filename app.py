@@ -9,9 +9,11 @@ categories = learn.dls.vocab
 
 def predict(img):
     # img = PILImage.create(img)
-    pred, pred_idx, probs = learn.predict(img)
+    _, _, probs = learn.predict(img)
     return dict(zip(categories, map(float, probs)))
 
+def donothing(img):
+    return img
 def dosomething(img):
     print(1)
 

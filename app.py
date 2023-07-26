@@ -7,20 +7,22 @@ learn = load_learner('khachapuri_classifier.pkl')
 categories = learn.dls.vocab
 
 
-def predict(img):
-    # img = PILImage.create(img)
-    _, _, probs = learn.predict(img)
-    return dict(zip(categories, map(float, probs)))
+
 
 def dosomething(img):
-    print(1)
+    print(2)
     
 def donothing(img):
-    return img
+    return (img, img)
 
 def doeverything(img):
     print(1)
     return img
+
+def predict(img):
+    # img = PILImage.create(img)
+    _, _, probs = learn.predict(img)
+    return dict(zip(categories, map(float, probs)))
 
 
 image = gr.inputs.Image(shape=(192, 192))
